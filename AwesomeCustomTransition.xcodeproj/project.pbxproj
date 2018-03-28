@@ -8,20 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		D5858E50206ACF8A007489D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5858E4F206ACF8A007489D4 /* AppDelegate.swift */; };
-		D5858E52206ACF8A007489D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5858E51206ACF8A007489D4 /* ViewController.swift */; };
 		D5858E55206ACF8A007489D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5858E53206ACF8A007489D4 /* Main.storyboard */; };
 		D5858E57206ACF8A007489D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5858E56206ACF8A007489D4 /* Assets.xcassets */; };
 		D5858E5A206ACF8A007489D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5858E58206ACF8A007489D4 /* LaunchScreen.storyboard */; };
+		D5858E63206AD08E007489D4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5858E62206AD08E007489D4 /* MainTabBarController.swift */; };
+		D5E156A0206AD78A00E065D7 /* PinnedBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1569F206AD78A00E065D7 /* PinnedBarView.swift */; };
+		D5E156A2206AD7AC00E065D7 /* PinnedBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E156A1206AD7AC00E065D7 /* PinnedBarView.xib */; };
+		D5F95BB4206B828E003E1039 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BB3206B828E003E1039 /* Extension+UIView.swift */; };
+		D5F95BB6206B830D003E1039 /* Extension+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BB5206B830D003E1039 /* Extension+NSObject.swift */; };
+		D5F95BB9206B8A12003E1039 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BB8206B8A12003E1039 /* Locator.swift */; };
+		D5F95BBC206B8A64003E1039 /* IComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BBB206B8A64003E1039 /* IComponentsFactory.swift */; };
+		D5F95BBE206B8BA3003E1039 /* ComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BBD206B8BA3003E1039 /* ComponentsFactory.swift */; };
+		D5F95BC3206B90FE003E1039 /* InfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BC2206B90FE003E1039 /* InfoCardViewController.swift */; };
+		D5F95BC6206B966D003E1039 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BC5206B966D003E1039 /* PresentationController.swift */; };
+		D5F95BC8206B967E003E1039 /* InteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BC7206B967E003E1039 /* InteractiveAnimator.swift */; };
+		D5F95BCB206B971F003E1039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BCA206B971F003E1039 /* Constant.swift */; };
+		D5F95BD0206BC35F003E1039 /* HeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BCF206BC35F003E1039 /* HeaderButton.swift */; };
+		D5F95BD2206BC377003E1039 /* HeaderButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F95BD1206BC377003E1039 /* HeaderButton.xib */; };
+		D5F95BD5206BC52A003E1039 /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F95BD4206BC52A003E1039 /* CoverImageView.swift */; };
+		D5F95BD7206BC538003E1039 /* CoverImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F95BD6206BC538003E1039 /* CoverImageView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D5858E4C206ACF89007489D4 /* AwesomeCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5858E4F206ACF8A007489D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5858E51206ACF8A007489D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D5858E54206ACF8A007489D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5858E56206ACF8A007489D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5858E59206ACF8A007489D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5858E5B206ACF8A007489D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5858E62206AD08E007489D4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		D5E1569F206AD78A00E065D7 /* PinnedBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedBarView.swift; sourceTree = "<group>"; };
+		D5E156A1206AD7AC00E065D7 /* PinnedBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinnedBarView.xib; sourceTree = "<group>"; };
+		D5F95BB3206B828E003E1039 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D5F95BB5206B830D003E1039 /* Extension+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSObject.swift"; sourceTree = "<group>"; };
+		D5F95BB8206B8A12003E1039 /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		D5F95BBB206B8A64003E1039 /* IComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IComponentsFactory.swift; sourceTree = "<group>"; };
+		D5F95BBD206B8BA3003E1039 /* ComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsFactory.swift; sourceTree = "<group>"; };
+		D5F95BC2206B90FE003E1039 /* InfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardViewController.swift; sourceTree = "<group>"; };
+		D5F95BC5206B966D003E1039 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		D5F95BC7206B967E003E1039 /* InteractiveAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveAnimator.swift; sourceTree = "<group>"; };
+		D5F95BCA206B971F003E1039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D5F95BCF206BC35F003E1039 /* HeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButton.swift; sourceTree = "<group>"; };
+		D5F95BD1206BC377003E1039 /* HeaderButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderButton.xib; sourceTree = "<group>"; };
+		D5F95BD4206BC52A003E1039 /* CoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
+		D5F95BD6206BC538003E1039 /* CoverImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverImageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +84,141 @@
 		D5858E4E206ACF8A007489D4 /* AwesomeCustomTransition */ = {
 			isa = PBXGroup;
 			children = (
+				D5F95BC4206B9651003E1039 /* Custom Transition */,
+				D5F95BB7206B8A04003E1039 /* Services */,
+				D5858E61206AD06D007489D4 /* Presentation */,
+				D5F95BB1206B8262003E1039 /* Resourses */,
 				D5858E4F206ACF8A007489D4 /* AppDelegate.swift */,
-				D5858E51206ACF8A007489D4 /* ViewController.swift */,
 				D5858E53206ACF8A007489D4 /* Main.storyboard */,
 				D5858E56206ACF8A007489D4 /* Assets.xcassets */,
 				D5858E58206ACF8A007489D4 /* LaunchScreen.storyboard */,
 				D5858E5B206ACF8A007489D4 /* Info.plist */,
 			);
 			path = AwesomeCustomTransition;
+			sourceTree = "<group>";
+		};
+		D5858E61206AD06D007489D4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D5E1569D206AD6F800E065D7 /* Components */,
+				D5E1569B206AD64D00E065D7 /* UserStories */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D5E1569B206AD64D00E065D7 /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				D5E1569C206AD66000E065D7 /* 1. Main Tab Bar */,
+				D5F95BC1206B90AB003E1039 /* 2. Info Card Controller */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		D5E1569C206AD66000E065D7 /* 1. Main Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				D5858E62206AD08E007489D4 /* MainTabBarController.swift */,
+			);
+			path = "1. Main Tab Bar";
+			sourceTree = "<group>";
+		};
+		D5E1569D206AD6F800E065D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D5E1569E206AD74C00E065D7 /* PinnedBarView */,
+				D5F95BCE206BC325003E1039 /* HeaderButton */,
+				D5F95BD3206BC4F5003E1039 /* CoverImageView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D5E1569E206AD74C00E065D7 /* PinnedBarView */ = {
+			isa = PBXGroup;
+			children = (
+				D5E1569F206AD78A00E065D7 /* PinnedBarView.swift */,
+				D5E156A1206AD7AC00E065D7 /* PinnedBarView.xib */,
+			);
+			path = PinnedBarView;
+			sourceTree = "<group>";
+		};
+		D5F95BB1206B8262003E1039 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BB2206B8278003E1039 /* Extensions */,
+				D5F95BC9206B9709003E1039 /* Utils */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		D5F95BB2206B8278003E1039 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BB3206B828E003E1039 /* Extension+UIView.swift */,
+				D5F95BB5206B830D003E1039 /* Extension+NSObject.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D5F95BB7206B8A04003E1039 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BB8206B8A12003E1039 /* Locator.swift */,
+				D5F95BBA206B8A39003E1039 /* ComponentsFactory */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D5F95BBA206B8A39003E1039 /* ComponentsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BBB206B8A64003E1039 /* IComponentsFactory.swift */,
+				D5F95BBD206B8BA3003E1039 /* ComponentsFactory.swift */,
+			);
+			path = ComponentsFactory;
+			sourceTree = "<group>";
+		};
+		D5F95BC1206B90AB003E1039 /* 2. Info Card Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BC2206B90FE003E1039 /* InfoCardViewController.swift */,
+			);
+			path = "2. Info Card Controller";
+			sourceTree = "<group>";
+		};
+		D5F95BC4206B9651003E1039 /* Custom Transition */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BC5206B966D003E1039 /* PresentationController.swift */,
+				D5F95BC7206B967E003E1039 /* InteractiveAnimator.swift */,
+			);
+			path = "Custom Transition";
+			sourceTree = "<group>";
+		};
+		D5F95BC9206B9709003E1039 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BCA206B971F003E1039 /* Constant.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D5F95BCE206BC325003E1039 /* HeaderButton */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BCF206BC35F003E1039 /* HeaderButton.swift */,
+				D5F95BD1206BC377003E1039 /* HeaderButton.xib */,
+			);
+			path = HeaderButton;
+			sourceTree = "<group>";
+		};
+		D5F95BD3206BC4F5003E1039 /* CoverImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D5F95BD4206BC52A003E1039 /* CoverImageView.swift */,
+				D5F95BD6206BC538003E1039 /* CoverImageView.xib */,
+			);
+			path = CoverImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E156A2206AD7AC00E065D7 /* PinnedBarView.xib in Resources */,
 				D5858E5A206ACF8A007489D4 /* LaunchScreen.storyboard in Resources */,
+				D5F95BD7206BC538003E1039 /* CoverImageView.xib in Resources */,
 				D5858E57206ACF8A007489D4 /* Assets.xcassets in Resources */,
+				D5F95BD2206BC377003E1039 /* HeaderButton.xib in Resources */,
 				D5858E55206ACF8A007489D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +296,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5858E52206ACF8A007489D4 /* ViewController.swift in Sources */,
+				D5F95BBE206B8BA3003E1039 /* ComponentsFactory.swift in Sources */,
+				D5F95BBC206B8A64003E1039 /* IComponentsFactory.swift in Sources */,
+				D5F95BD5206BC52A003E1039 /* CoverImageView.swift in Sources */,
+				D5E156A0206AD78A00E065D7 /* PinnedBarView.swift in Sources */,
+				D5F95BC8206B967E003E1039 /* InteractiveAnimator.swift in Sources */,
+				D5F95BB6206B830D003E1039 /* Extension+NSObject.swift in Sources */,
+				D5F95BB9206B8A12003E1039 /* Locator.swift in Sources */,
+				D5858E63206AD08E007489D4 /* MainTabBarController.swift in Sources */,
+				D5F95BC3206B90FE003E1039 /* InfoCardViewController.swift in Sources */,
+				D5F95BD0206BC35F003E1039 /* HeaderButton.swift in Sources */,
+				D5F95BB4206B828E003E1039 /* Extension+UIView.swift in Sources */,
 				D5858E50206ACF8A007489D4 /* AppDelegate.swift in Sources */,
+				D5F95BC6206B966D003E1039 /* PresentationController.swift in Sources */,
+				D5F95BCB206B971F003E1039 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
