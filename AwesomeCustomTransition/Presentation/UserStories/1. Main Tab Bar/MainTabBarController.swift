@@ -37,9 +37,9 @@ class MainTabBarController: UITabBarController {
     // MARK: - Setup Pinned Bar
     private func setupPinnedBarView() {
         let barFrame = CGRect(x: 0,
-                              y: view.bounds.height - 120,
+                              y: view.bounds.height - Constant.tabBarHeight,
                               width: view.bounds.width,
-                              height: 120)
+                              height: Constant.pinnedBarHeight)
         pinnedBarView.frame = barFrame
         view.insertSubview(pinnedBarView, belowSubview: tabBar)
     }
@@ -94,8 +94,9 @@ extension MainTabBarController: UIViewControllerTransitioningDelegate {
 extension MainTabBarController: InfoCardViewControllerDelegate {
     func update(withProgress progress: CGFloat) {
         guard let currView = selectedViewController?.view else { return }
-        currView.transform = CGAffineTransform.identity.scaledBy(x: 0.95 + 0.05 * progress,
-                                                                 y: 0.95 + 0.05 * progress)
+        currView.transform =
+            CGAffineTransform.identity.scaledBy(x: Constant.homeScaleX + 0.05 * progress,
+                                                y: Constant.homeScaleY + 0.05 * progress)
     }
 }
 

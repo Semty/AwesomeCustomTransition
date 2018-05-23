@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D537806420B5930600747EF3 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D537806320B5930600747EF3 /* Extension+CGFloat.swift */; };
 		D5858E50206ACF8A007489D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5858E4F206ACF8A007489D4 /* AppDelegate.swift */; };
 		D5858E55206ACF8A007489D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5858E53206ACF8A007489D4 /* Main.storyboard */; };
 		D5858E57206ACF8A007489D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5858E56206ACF8A007489D4 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D537806320B5930600747EF3 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
 		D5858E4C206ACF89007489D4 /* AwesomeCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5858E4F206ACF8A007489D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5858E54206ACF8A007489D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				D5F95BB3206B828E003E1039 /* Extension+UIView.swift */,
 				D5F95BB5206B830D003E1039 /* Extension+NSObject.swift */,
+				D537806320B5930600747EF3 /* Extension+CGFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				D5F95BD0206BC35F003E1039 /* HeaderButton.swift in Sources */,
 				D5F95BB4206B828E003E1039 /* Extension+UIView.swift in Sources */,
 				D5858E50206ACF8A007489D4 /* AppDelegate.swift in Sources */,
+				D537806420B5930600747EF3 /* Extension+CGFloat.swift in Sources */,
 				D5F95BC6206B966D003E1039 /* PresentationController.swift in Sources */,
 				D5F95BCB206B971F003E1039 /* Constant.swift in Sources */,
 			);
@@ -453,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RuslanTimchenko.AwesomeCustomTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -468,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RuslanTimchenko.AwesomeCustomTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

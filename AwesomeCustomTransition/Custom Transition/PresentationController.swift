@@ -71,13 +71,15 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
             container.addSubview(presented)
             container.addSubview(fakeTabbar!)
             presented.frame = CGRect(x: 0,
-                                     y: container.bounds.height - Constant.pinnedBarHeight,
+                                     y: container.bounds.height - Constant.tabBarHeight,
                                      width: container.bounds.width,
                                      height: Constant.pinnedBarHeight)
             UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
                 contentesView.layer.cornerRadius = 10
                 contentesView.clipsToBounds = true
-                contentesView.transform = contentesView.transform.scaledBy(x: 0.95, y: 0.95)
+                contentesView.transform =
+                    contentesView.transform.scaledBy(x: Constant.homeScaleX,
+                                                     y: Constant.homeScaleY)
                 contentesView.transform = contentesView.transform.translatedBy(x: 0, y: 20 - container.bounds.height * 0.05 / 2)
                 presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: presentingVC.tabBar.bounds.height)
                 self.fakeTabbar!.frame = self.fakeTabbar!.frame.offsetBy(dx: 0, dy: self.fakeTabbar!.bounds.height)
@@ -110,7 +112,7 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
                 presentedVC.frameBeforePresent()
                 presented.layer.cornerRadius = 0
                 presented.frame = CGRect(x: 0,
-                                         y: container.bounds.height - Constant.pinnedBarHeight,
+                                         y: container.bounds.height - Constant.tabBarHeight,
                                          width: container.bounds.width,
                                          height: Constant.pinnedBarHeight)
             }, completion: { (_) in

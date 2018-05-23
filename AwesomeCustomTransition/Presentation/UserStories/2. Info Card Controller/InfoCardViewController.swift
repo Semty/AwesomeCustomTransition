@@ -49,14 +49,19 @@ class InfoCardViewController: UIViewController {
     @objc private func panGestureAction(gesture: UIPanGestureRecognizer) {
         let viewTransition = gesture.translation(in: view)
         let progress = viewTransition.y / (originFrame.height - Constant.pinnedBarHeight)
+        print(progress)
         switch gesture.state {
         case .began:
             originFrame = view.frame
         case .changed:
-            if progress > Constant.closedProgressNotReturn {
-                endPan(withProgress: progress)
+            if progress >= 0 {
+                if progress > Constant.closedProgressNotReturn {
+                    endPan(withProgress: progress)
+                } else {
+                    update(withProgress: progress)
+                }
             } else {
-                update(withProgress: progress)
+                break
             }
         case .cancelled:
             break
