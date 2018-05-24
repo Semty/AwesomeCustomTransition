@@ -27,10 +27,10 @@ class PresentationController: UIPresentationController {
         guard let fromView = presentingViewController.view else { return }
         guard let coordinator = presentedViewController.transitionCoordinator else { return }
         guard let presentingVC = presentingViewController as? MainTabBarController else { return }
-        guard let contentesView = presentingVC.selectedViewController?.view else { return }
+        guard let contentsView = presentingVC.selectedViewController?.view else { return }
         
         blackLayer.frame = fromView.frame
-        contentesView.addSubview(blackLayer)
+        contentsView.addSubview(blackLayer)
         coordinator.animate(alongsideTransition: { (context) in
             self.blackLayer.alpha = 0.5
         }) { (_) in
@@ -64,7 +64,7 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
         
         guard let presentedVC = presentedViewController as? InfoCardViewController else { return }
         guard let presentingVC = presentingViewController as? MainTabBarController else { return }
-        guard let contentesView = presentingVC.selectedViewController?.view else { return }
+        guard let contentsView = presentingVC.selectedViewController?.view else { return }
         if isPresenting {
             fakeTabbar = presentingVC.tabBar.snapshotView(afterScreenUpdates: false)
             fakeTabbar?.frame = presentingVC.tabBar.frame
@@ -75,12 +75,14 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
                                      width: container.bounds.width,
                                      height: Constant.pinnedBarHeight)
             UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-                contentesView.layer.cornerRadius = 10
-                contentesView.clipsToBounds = true
-                contentesView.transform =
-                    contentesView.transform.scaledBy(x: Constant.homeScaleX,
+                contentsView.layer.cornerRadius = 10
+                contentsView.layer.maskedCorners =
+                    [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+                contentsView.clipsToBounds = true
+                contentsView.transform =
+                    contentsView.transform.scaledBy(x: Constant.homeScaleX,
                                                      y: Constant.homeScaleY)
-                contentesView.transform = contentesView.transform.translatedBy(x: 0, y: 20 - container.bounds.height * 0.05 / 2)
+                contentsView.transform = contentsView.transform.translatedBy(x: 0, y: 20 - container.bounds.height * 0.05 / 2)
                 presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: presentingVC.tabBar.bounds.height)
                 self.fakeTabbar!.frame = self.fakeTabbar!.frame.offsetBy(dx: 0, dy: self.fakeTabbar!.bounds.height)
                 
@@ -90,6 +92,8 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
                                          width: container.bounds.width,
                                          height: container.bounds.height - Constant.pinnedBarInfoTopPadding)
                 presented.layer.cornerRadius = 10
+                presented.layer.maskedCorners =
+                    [.layerMinXMinYCorner, .layerMaxXMinYCorner]
                 presented.clipsToBounds = true
             }, completion: { (_) in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -102,9 +106,9 @@ extension PresentationController: UIViewControllerAnimatedTransitioning {
                            options: .curveEaseInOut,
                            animations: {
                             
-                contentesView.layer.cornerRadius = 0
-                contentesView.transform = CGAffineTransform.identity
-                contentesView.frame = container.frame
+                contentsView.layer.cornerRadius = 0
+                contentsView.transform = CGAffineTransform.identity
+                contentsView.frame = container.frame
                 presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: -presentingVC.tabBar.bounds.height)
                 presentingVC.pinnedBarView.isHidden = true
                 self.fakeTabbar!.frame = self.fakeTabbar!.frame.offsetBy(dx: 0, dy: -self.fakeTabbar!.bounds.height)
