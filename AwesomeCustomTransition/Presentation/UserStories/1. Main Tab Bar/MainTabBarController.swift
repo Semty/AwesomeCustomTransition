@@ -70,13 +70,17 @@ class MainTabBarController: UITabBarController {
 
 // MARK: - UIViewControllerTransitioningDelegate
 extension MainTabBarController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        presentationAnimator?.isPresenting = true
+    
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        presentationAnimator?.state = .presenting
         return presentationAnimator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        presentationAnimator?.isPresenting = false
+        presentationAnimator?.state = .hidden
         return presentationAnimator
     }
     

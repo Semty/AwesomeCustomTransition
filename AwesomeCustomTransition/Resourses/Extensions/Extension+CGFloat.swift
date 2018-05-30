@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 extension CGFloat {
-    static let iphoneX: CGFloat = 2436.0
+    static let iphoneX: CGFloat = 2436
 }

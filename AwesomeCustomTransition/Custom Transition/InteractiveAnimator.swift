@@ -33,7 +33,6 @@ class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     @objc private func tapGestureAction(gesture: UIPanGestureRecognizer) {
         let viewTransition = gesture.translation(in: view)
         let progress = -viewTransition.y / (UIScreen.main.bounds.height - Constant.tabBarHeight - Constant.statusBarHeight)
-        //print(progress)
         switch gesture.state {
         case .began:
             delegate?.presentInteractive()
