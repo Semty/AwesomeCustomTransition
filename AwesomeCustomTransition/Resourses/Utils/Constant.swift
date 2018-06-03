@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 enum Constant {
-    static let openProgressNotReturn: CGFloat = 0.01
+    static let openTranslationProgressNotReturn: CGFloat = 0.10
+    static let openTranslationProgressEnd: CGFloat = 0.20
+    static let openVelocitySpeedNotReturn: CGFloat = 100.0
     static let closedProgressNotReturn: CGFloat = 0.35
     static let pinnedBarHeight: CGFloat = 120
     static let statusBarHeight = UIApplication.shared.statusBarFrame.height

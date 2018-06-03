@@ -20,6 +20,7 @@ public final class HeaderButton: UIButton {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        bounds = .zero
         backgroundColor = .lightGray
         layer.cornerRadius = 2
     }

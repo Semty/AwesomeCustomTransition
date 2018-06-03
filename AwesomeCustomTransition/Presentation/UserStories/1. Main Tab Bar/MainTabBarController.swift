@@ -31,7 +31,9 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Gesture Actions
     @objc private func tapGestureAction(_ sender: UITapGestureRecognizer) {
-        presentInfoCard()
+        if sender.state == .ended {
+            presentInfoCard()
+        }
     }
     
     // MARK: - Setup Pinned Bar

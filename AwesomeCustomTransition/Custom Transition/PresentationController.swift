@@ -36,7 +36,7 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
     
     private var fakeTabbar: UIView?
     
-    private var blackLayer: UIView = {
+    private lazy var blackLayer: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = 0
@@ -90,6 +90,7 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
                                  width: container.bounds.width,
                                  height: Constant.pinnedBarHeight)
         UIView.animate(withDuration: .duration, delay: 0, usingSpringWithDamping: .presantingSpringWithDamping, initialSpringVelocity: .presantingInitialSpringVelocity, options: .curveEaseInOut, animations: {
+            
             contentsView.layer.cornerRadius = .cornerRadius
             contentsView.layer.maskedCorners =
                 [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -97,7 +98,12 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
             contentsView.transform =
                 contentsView.transform.scaledBy(x: Constant.homeScaleX,
                                                 y: Constant.homeScaleY)
-            contentsView.transform = contentsView.transform.translatedBy(x: 0, y: .contentsViewYOffset - container.bounds.height * .contentsViewYCoeff / 2)
+            contentsView.transform =
+                contentsView.transform.translatedBy(x: 0,
+                                                    y: .contentsViewYOffset -
+                                                        container.bounds.height *
+                                                        .contentsViewYCoeff / 2)
+            
             presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: presentingVC.tabBar.bounds.height)
             fakeTabbar.frame = fakeTabbar.frame.offsetBy(dx: 0, dy: fakeTabbar.bounds.height)
             
@@ -164,7 +170,7 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
         switch state {
         case .presenting:
             showPresentingAnimation(using: transitionContext)
-        default:
+        case .hidden:
             showHiddenAnimation(using: transitionContext)
         }
     }
