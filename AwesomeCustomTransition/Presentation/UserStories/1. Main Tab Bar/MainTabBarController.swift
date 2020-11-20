@@ -20,6 +20,9 @@ class MainTabBarController: UITabBarController {
     var presentationAnimator: PresentationController?
     var interactiveAnimator: InteractiveAnimator?
     
+    // Private
+    private var interactive = false
+    
     // MARK: - Tab Bar Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class MainTabBarController: UITabBarController {
     // MARK: - Gesture Actions
     @objc private func tapGestureAction(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
+            interactive = false
             presentInfoCard()
         }
     }
@@ -92,7 +96,7 @@ extension MainTabBarController: UIViewControllerTransitioningDelegate {
     }
     
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactiveAnimator
+        return interactive ? interactiveAnimator : nil
     }
 }
 
@@ -103,12 +107,14 @@ extension MainTabBarController: InfoCardViewControllerDelegate {
         currView.transform =
             CGAffineTransform.identity.scaledBy(x: Constant.homeScaleX + 0.05 * progress,
                                                 y: Constant.homeScaleY + 0.05 * progress)
+        currView.layoutSubviews()
     }
 }
 
 // MARK: - InteractiveAnimatorDelegate
 extension MainTabBarController: InteractiveAnimatorDelegate {
     func presentInteractive() {
+        interactive = true
         presentInfoCard()
     }
 }

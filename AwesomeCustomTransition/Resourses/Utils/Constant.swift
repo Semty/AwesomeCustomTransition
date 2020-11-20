@@ -19,27 +19,29 @@ enum Constant {
     static let homeScaleX: CGFloat = 0.95
     
     static var homeScaleY: CGFloat {
-        if UIScreen.main.nativeBounds.height == .iphoneX {
-            return 0.91
+        if UIDevice.hasNotch {
+            return 0.915
         } else {
             return 0.935
         }
     }
     
     static var pinnedBarInfoTopPadding: CGFloat {
-        if UIScreen.main.nativeBounds.height == .iphoneX {
-            return 50
-        } else {
-            return 40
-        }
+//        if UIScreen.main.nativeBounds.height == .iphoneX {
+//            // 30 - it's like a zero; 44 - it's default status bar height
+//            return 44
+//        } else {
+//            // 20 - it's like a zero; 20 - it's default status bar height
+//            return 31
+//        }
+        return UIDevice.safeAreaTopInset
     }
     
     static var tabBarHeight: CGFloat {
-        if UIScreen.main.nativeBounds.height == .iphoneX {
-            return 120 + 34
+        if UIDevice.hasNotch {
+            return 120 + UIDevice.safeAreaBottomInset
         } else {
             return 120
         }
-    
     }
 }

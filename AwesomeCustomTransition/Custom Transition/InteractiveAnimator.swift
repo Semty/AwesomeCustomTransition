@@ -19,16 +19,22 @@ class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     weak var delegate: InteractiveAnimatorDelegate?
     
+    // MARK: - Initialization
+    
     init(attachTo view: UIView) {
         self.view = view
         super.init()
         setPanGesture(view: view)
     }
     
+    // MARK: - Helpful Private Functions
+    
     private func setPanGesture(view: UIView) {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(gesture:)))
         view.addGestureRecognizer(gesture)
     }
+    
+    // MARK: - Actions
     
     @objc private func panGestureAction(gesture: UIPanGestureRecognizer) {
         let viewTranslation = gesture.translation(in: view)
@@ -36,13 +42,15 @@ class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
         
         let translationProgress = -viewTranslation.y / (UIScreen.main.bounds.height - Constant.tabBarHeight - Constant.statusBarHeight - Constant.pinnedBarHeight)
         let velocitySpeed = -viewVelocity.y
+        
+        let isUpSwipe = velocitySpeed > 0
 
         print("PROGRESS = \(translationProgress)")
         print("SPEED = \(velocitySpeed)")
         
         switch gesture.state {
         case .began:
-            if translationProgress > 0 {
+            if isUpSwipe {
                 delegate?.presentInteractive()
             }
         case .changed:

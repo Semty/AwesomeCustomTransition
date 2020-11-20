@@ -83,14 +83,17 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
         
         self.fakeTabbar = fakeTabbar
         fakeTabbar.frame = presentingVC.tabBar.frame
+        
         container.addSubview(presented)
         container.addSubview(fakeTabbar)
+        
         presented.frame = CGRect(x: 0,
                                  y: container.bounds.height - Constant.tabBarHeight,
                                  width: container.bounds.width,
                                  height: Constant.pinnedBarHeight)
+        
         UIView.animate(withDuration: .duration, delay: 0, usingSpringWithDamping: .presantingSpringWithDamping, initialSpringVelocity: .presantingInitialSpringVelocity, options: .curveEaseInOut, animations: {
-            
+
             contentsView.layer.cornerRadius = .cornerRadius
             contentsView.layer.maskedCorners =
                 [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -98,15 +101,11 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
             contentsView.transform =
                 contentsView.transform.scaledBy(x: Constant.homeScaleX,
                                                 y: Constant.homeScaleY)
-            contentsView.transform =
-                contentsView.transform.translatedBy(x: 0,
-                                                    y: .contentsViewYOffset -
-                                                        container.bounds.height *
-                                                        .contentsViewYCoeff / 2)
+            contentsView.layoutSubviews()
             
             presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: presentingVC.tabBar.bounds.height)
             fakeTabbar.frame = fakeTabbar.frame.offsetBy(dx: 0, dy: fakeTabbar.bounds.height)
-            
+
             presentedVC.frameAfterPresent()
             presented.frame = CGRect(x: 0,
                                      y: Constant.pinnedBarInfoTopPadding,
@@ -116,8 +115,11 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
             presented.layer.maskedCorners =
                 [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             presented.clipsToBounds = true
-        }, completion: { (_) in
+            presented.layoutSubviews()
+            
+        }, completion: { (finished) in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            contentsView.layoutSubviews()
         })
     }
     
@@ -134,12 +136,14 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
                        delay: 0,
                        usingSpringWithDamping: .hiddenSpringWithDamping,
                        initialSpringVelocity: .hiddenInitialSpringVelocity,
-                       options: .curveEaseInOut,
+                       options: [.curveEaseInOut, .beginFromCurrentState],
                        animations: {
                         
                         contentsView.layer.cornerRadius = 0
                         contentsView.transform = CGAffineTransform.identity
                         contentsView.frame = container.frame
+                        contentsView.layoutSubviews()
+                        
                         presentingVC.tabBar.frame = presentingVC.tabBar.frame.offsetBy(dx: 0, dy: -presentingVC.tabBar.bounds.height)
                         presentingVC.pinnedBarView.isHidden = true
                         fakeTabbar.frame = fakeTabbar.frame.offsetBy(dx: 0, dy: -fakeTabbar.bounds.height)
@@ -150,6 +154,7 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
                                                  y: container.bounds.height - Constant.tabBarHeight,
                                                  width: container.bounds.width,
                                                  height: Constant.pinnedBarHeight)
+                        presented.layoutSubviews()
         }, completion: { (_) in
             if !transitionContext.transitionWasCancelled {
                 fakeTabbar.removeFromSuperview()
@@ -157,6 +162,7 @@ class PresentationController: UIPresentationController, UIViewControllerAnimated
                 presentingVC.pinnedBarView.isHidden = false
             }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            contentsView.layoutSubviews()
         })
     }
     

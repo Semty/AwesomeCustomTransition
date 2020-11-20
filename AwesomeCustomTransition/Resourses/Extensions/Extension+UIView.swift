@@ -24,14 +24,14 @@ extension UIViewLoading where Self: UIView {
         let bundle = Bundle(for: self)
         
         guard let viewFromNib = bundle.loadNibNamed(nibName(), owner: self, options: nil)?.first as? Self else {
-            fatalError("Can't load Nib with name \(nibName)")
+            fatalError("Can't load Nib with name \(String(describing: nibName))")
         }
         return viewFromNib
     }
     
     static func nibName() -> String {
         var nibName = self.className
-        if let index = nibName.index(of: "<") {
+        if let index = nibName.firstIndex(of: "<") {
             nibName = String(nibName[..<index])
         }
         return nibName
